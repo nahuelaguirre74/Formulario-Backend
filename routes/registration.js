@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const registration = await Registration.findById(req.params.id);
-        if (!registration) return res.status(404).json({ message: 'Not Found' });
+        if (!registration) return res.status(404).json({ message: 'No Found' });
         res.json(registration);
     } catch (err) {
         res.status(500).json({ message: err.message });
